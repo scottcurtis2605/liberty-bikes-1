@@ -3,6 +3,7 @@ package org.libertybikes.player.service;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbTransient;
 
 public class Player {
@@ -25,16 +26,19 @@ public class Player {
 
     public final String name;
 
-    public final PlayerStats stats = new PlayerStats();
+    public final PlayerStats stats;
 
-    public Player(String name) {
-        this(name, null);
+    public Player(String name, String id) {
+        this(name, id, new PlayerStats());
     }
 
     @JsonbCreator
-    public Player(String name, String id) {
+    public Player(@JsonbProperty("name") String name,
+                  @JsonbProperty("id") String id,
+                  @JsonbProperty("stats") PlayerStats stats) {
         this.id = (id == null || id.equals("null")) ? DOMAIN.BASIC + name : id;
         this.name = name;
+        this.stats = stats;
     }
 
     public static int compareByWins(Player a, Player b) {
