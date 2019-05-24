@@ -60,6 +60,7 @@ services:
       services:
         - repo
       name: 'liberty-bikes-player'
+      ui-pipeline: true
       configuration:
         content:
           $text: pipeline-player.yml
@@ -73,13 +74,14 @@ services:
           PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-      execute: true
+        execute: true
   build-auth:
     service_id: pipeline
     parameters:
       services:
         - repo
       name: 'liberty-bikes-auth'
+      ui-pipeline: true
       configuration:
         content:
           $text: pipeline-auth.yml
@@ -93,13 +95,14 @@ services:
           PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-        execute: false        
+        execute: true        
   build-frontend:
     service_id: pipeline
     parameters:
       services:
         - repo
       name: 'liberty-bikes-frontend'
+      ui-pipeline: true
       configuration:
         content:
           $text: pipeline-frontend.yml
@@ -113,13 +116,14 @@ services:
           PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-        execute: false        
+        execute: true        
   build-game:
     service_id: pipeline
     parameters:
       services:
         - repo
       name: 'liberty-bikes-game'
+      ui-pipeline: true
       configuration:
         content:
           $text: pipeline-game.yml
@@ -133,7 +137,7 @@ services:
           PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
-        execute: false                        
+        execute: true                        
   webide:
     service_id: orion
 form:
