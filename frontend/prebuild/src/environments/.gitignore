@@ -1,2 +1,0 @@
-# Do not check in the production environment files
-environment.prod.ts
