@@ -10,7 +10,7 @@ Please note that you'll need an IBM Cloud account for this. If you don't have on
 
 Clicking the button below automatically deploys the current `liberty-bikes/liberty-bikes` branches `auth`, `player`, `frontend` and `game`.
 
-[![Create toolchain](https://cloud.ibm.com/devops/graphics/create_toolchain_button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/eciggaar/liberty-bikes&env_id=ibm:yp:eu-de)
+[![Create toolchain](https://cloud.ibm.com/devops/graphics/create_toolchain_button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/eciggaar/liberty-bikes-1&env_id=ibm:yp:eu-de)
 
 ## Run it locally
 
