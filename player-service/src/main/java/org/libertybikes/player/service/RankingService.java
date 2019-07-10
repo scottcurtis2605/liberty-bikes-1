@@ -71,7 +71,7 @@ public class RankingService {
 
     void recordGameInternal(String id, int place) {
         if (place < 1 || place > 4) {
-            System.out.println("Invalid place (" + place + "), must be 1-4");
+            System.out.println("Invalid place (" + place + "), must be 1 - 4");
             return;
         }
         Player p = playerSvc.getPlayerById(id);
