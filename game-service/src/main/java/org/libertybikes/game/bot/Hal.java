@@ -9,7 +9,7 @@ import org.libertybikes.game.maps.GameMap;
 public class Hal extends AIPlayer {
 
     private int ticksTillRandomMove = 20;
-    private int ticksTillMove = 4;
+    private int ticksTillMove = 10;
     private int numOfRandomMoves = 0;
     static Random ran = new Random();
     // Collision detection distance
