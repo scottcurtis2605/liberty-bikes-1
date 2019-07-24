@@ -14,9 +14,9 @@ template:
     - repo
   info:
     git url: >-
-      [https://github.com/eciggaar/liberty-bikes-1](https://github.com/eciggaar/liberty-bikes-1)
+      [https://github.com/scottcurtis2605/liberty-bikes-1](https://github.com/scottcurtis2605/liberty-bikes-1)
     git branch: >-
-      [master](https://github.com/eciggaar/liberty-bikes-1/tree/master)
+      [master](https://github.com/scottcurtis2605/liberty-bikes-1/tree/master)
 toolchain:
   name: 'liberty-bikes-toolchain-{{timestamp}}'
   template:
@@ -30,7 +30,7 @@ services:
         service_id: hostedgit
         parameters:
           repo_name: 'liberty-bikes-{{timestamp}}'
-          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/eciggaar/liberty-bikes-1'"
+          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/scottcurtis2605/liberty-bikes-1'"
           source_repo_url: "$env.type === 'fork' || $env.type === 'clone' ? $env.app_repo : ''"
           type: $env.type || 'clone'
           has_issues: true
@@ -39,7 +39,7 @@ services:
         service_id: githubconsolidated
         parameters:
           repo_name: 'liberty-bikes-{{timestamp}}'
-          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/eciggaar/liberty-bikes-1'"
+          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/scottcurtis2605/liberty-bikes-1'"
           source_repo_url: "$env.type === 'fork' || $env.type === 'clone' ? $env.app_repo : ''"
           type: $env.type  || 'clone'
           visibility: public
@@ -47,7 +47,7 @@ services:
         service_id: github_integrated
         parameters:
           repo_name: 'liberty-bikes-{{timestamp}}'
-          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/eciggaar/liberty-bikes-1'"
+          repo_url: "$env.type === 'link' ? $env.app_repo : 'https://github.com/scottcurtis2605/liberty-bikes-1'"
           source_repo_url: "$env.type === 'fork' || $env.type === 'clone' ? $env.app_repo : ''"
           type: "$env.type !== undefined ? $env.type : 'clone'"
           has_issues: true
